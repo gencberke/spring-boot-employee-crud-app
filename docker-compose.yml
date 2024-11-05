@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: employeeManager
+      POSTGRES_PASSWORD: employeeManager
+      POSTGRES_DB: employee_db
+    hostname: localhost
+    ports:
+      - '5433:5432'

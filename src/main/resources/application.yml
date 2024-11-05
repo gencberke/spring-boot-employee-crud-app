@@ -1,0 +1,11 @@
+server:
+  port: 8090
+  forward-headers-strategy: framework
+spring:
+  datasource:
+    username: employeeManager
+    url: jdbc:postgresql://localhost:5433/employee_db?useSSL=false
+    password: employeeManager
+  jpa:
+    hibernate:
+      ddl-auto: update
