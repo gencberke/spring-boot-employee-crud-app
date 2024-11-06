@@ -21,6 +21,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeMapper employeeMapper;
 
     @Override
+    public List<EmployeeResponse> getAllEmployees() {
+        List<Employee> employees = employeeRepository.findAll();
+
+        return employeeMapper.toListResponse(employees);
+    }
+
+    @Override
     public EmployeeResponse getEmployeeById(Long id) {
         Employee employee = employeeRepository.getEmployeeById(id);
         return employeeMapper.toResponse(employee);
@@ -55,7 +62,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeResponse updateEmployeeById(Long id, Employee employee) {
         Employee dbEmployee = employeeRepository.getEmployeeById(id);
 
-        // normalde builder kullanabiliriz.
+        // normally we use builder for this.
         dbEmployee.setFirstName(employee.getFirstName());
         dbEmployee.setLastName(employee.getLastName());
         dbEmployee.setEmail(employee.getEmail());

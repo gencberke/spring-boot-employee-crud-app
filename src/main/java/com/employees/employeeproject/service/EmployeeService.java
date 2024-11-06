@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface EmployeeService {
 
+    List<EmployeeResponse> getAllEmployees();
+
     EmployeeResponse getEmployeeById(Long id);
 
     EmployeeResponse signNewEmployee(Employee employee);
