@@ -3,6 +3,7 @@ package com.employees.employeeproject.controller;
 import com.employees.employeeproject.data.dto.EmployeeResponse;
 import com.employees.employeeproject.data.entity.Employee;
 import com.employees.employeeproject.service.EmployeeService;
+import com.employees.employeeproject.service.impl.EmployeeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmployeeController {
 
-    private final EmployeeService employeeService;
+    private final EmployeeServiceImpl employeeService;
 
-    @GetMapping("/employee/{id}")
-    public EmployeeResponse getEmployee(@PathVariable Long id) {
+    @GetMapping("/employee")
+    public EmployeeResponse getEmployee(@RequestParam("id") Long id) {
         return employeeService.getEmployeeById(id);
     }
 
@@ -38,7 +39,7 @@ public class EmployeeController {
 
     //delete method
     @DeleteMapping("/employee")
-    public void deleteEmployee(@RequestParam Long id) {
+    public void deleteEmployee(@RequestParam(value = "id") Long id) {
         employeeService.deleteEmployeeById(id);
     }
 

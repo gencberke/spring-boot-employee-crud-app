@@ -11,12 +11,6 @@ import java.util.List;
 @Component
 public class EmployeeMapper {
 
-    private final EmployeeProjectApplication employeeProjectApplication;
-
-    public EmployeeMapper(EmployeeProjectApplication employeeProjectApplication) {
-        this.employeeProjectApplication = employeeProjectApplication;
-    }
-
     public EmployeeResponse toResponse(Employee employee) {
         EmployeeResponse employeeResponse = new EmployeeResponse();
         employeeResponse.setFirstName(employee.getFirstName());
