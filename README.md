@@ -11,7 +11,7 @@ The project uses **PostgreSQL** as the database and follows best practices for J
 - **Spring Data JPA / Hibernate**
 - **PostgreSQL**
 - **Docker & Docker Compose** (for containerized environment)
-- **JUnit** (for testing)
+- **JUnit**
 
 ---
 
